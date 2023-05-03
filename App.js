@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 export default function App() {
-  let listaInicial = ['Caderno', 'Lapis'];
+  let listaInicial = ['Caderno', 'Lapis', 'Caneta'];
   let [listaMateriais, definirListaMateriais] = useState(listaInicial);
 
   return (
