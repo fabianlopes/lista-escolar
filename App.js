@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 export default function App() {
-  let listaInicial = ['Caderno', 'Lapis', 'Caneta'];
+  let listaInicial = [{ nome: '', preco: '' }];
   let [listaMateriais, definirListaMateriais] = useState(listaInicial);
 
   return (
@@ -16,6 +16,12 @@ export default function App() {
         />
         <TextInput
           placeholder={'Inserir Novo Item'}
+          onSubmitEditing={({nativeEvent})=>
+          definirListaMateriais(listaMateriais.concat({ nome: nativeEvent.text, preco: '' }))
+          }
+        />
+        <TextInput
+          placeholder={'Inserir Novo Preço'}
           onSubmitEditing={({nativeEvent})=>
           definirListaMateriais(listaMateriais.concat(nativeEvent.text))
           }
